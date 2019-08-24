@@ -18,6 +18,6 @@ treedata:
   cityofnewyork:
     url: https://data.cityofnewyork.us/resource/nwxe-4ae8.json
   cache:
-    expireSeconds: 10
+    expireSeconds: 15
 
  
