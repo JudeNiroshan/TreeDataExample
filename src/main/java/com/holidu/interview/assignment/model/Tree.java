@@ -2,6 +2,9 @@ package com.holidu.interview.assignment.model;
 
 import org.springframework.lang.NonNull;
 
+/**
+ * Model object that represent a Tree entity
+ */
 public class Tree {
     @NonNull
     private String tree_id;

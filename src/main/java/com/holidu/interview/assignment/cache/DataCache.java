@@ -9,6 +9,14 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.util.Optional;
 
+/**
+ * Simple data cache for Tree data objects. This can be used when
+ * there are many data objects being received from the 3rd party
+ * data provider. Data can be cached to minimize the response time
+ * for future in-coming http requests.
+ *
+ * Note: data expiration timeout is defined in application.yml
+ */
 @Service
 public class DataCache {
 
@@ -25,6 +33,10 @@ public class DataCache {
         DataCache.expirationSeconds = expirationSeconds;
     }
 
+    /**
+     * returns the data if is it available and not already expired
+     * @return
+     */
     public static Optional<ObjectNode[]> getData() {
         Instant plusSeconds = lastUpdated.plusSeconds(expirationSeconds);
 
@@ -35,6 +47,10 @@ public class DataCache {
         return Optional.of(data);
     }
 
+    /**
+     * Set the new value in the cache
+     * @param dataToSet
+     */
     public static void updateCache(ObjectNode[] dataToSet) {
         LOGGER.debug("Updating cache with new data...");
         lastUpdated = Instant.now();
