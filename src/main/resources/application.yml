@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /treelookup/api
+
+project:
+  name: Tree-Lookup
+  version: 0.1
+  description: Tree-Lookup default description
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
+
+treedata:
+  cityofnewyork:
+    url: https://data.cityofnewyork.us/resource/nwxe-4ae8.json
+  cache:
+    expireSeconds: 10
+
+ 
