@@ -1,5 +1,6 @@
 package com.holidu.interview.assignment.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.lang.NonNull;
 
 /**
@@ -7,51 +8,55 @@ import org.springframework.lang.NonNull;
  */
 public class Tree {
     @NonNull
-    private String tree_id;
+    @JsonProperty("tree_id")
+    private String treeId;
     @NonNull
-    private String spc_common;
-    private Double x_sp;
-    private Double y_sp;
+    @JsonProperty("spc_common")
+    private String treeName;
+    @JsonProperty("x_sp")
+    private Double x;
+    @JsonProperty("y_sp")
+    private Double y;
 
     public Tree() {
     }
 
-    public Tree(String tree_id, String spc_common, Double x_sp, Double y_sp) {
-        this.tree_id = tree_id;
-        this.spc_common = spc_common;
-        this.x_sp = x_sp;
-        this.y_sp = y_sp;
+    public Tree(String treeId, String treeName, Double x, Double y) {
+        this.treeId = treeId;
+        this.treeName = treeName;
+        this.x = x;
+        this.y = y;
     }
 
-    public String getSpc_common() {
-        return spc_common;
+    public String getTreeName() {
+        return treeName;
     }
 
-    public void setSpc_common(String spc_common) {
-        this.spc_common = spc_common;
+    public void setTreeName(String treeName) {
+        this.treeName = treeName;
     }
 
-    public Double getX_sp() {
-        return x_sp;
+    public Double getX() {
+        return x;
     }
 
-    public void setX_sp(Double x_sp) {
-        this.x_sp = x_sp;
+    public void setX(Double x) {
+        this.x = x;
     }
 
-    public Double getY_sp() {
-        return y_sp;
+    public Double getY() {
+        return y;
     }
 
-    public void setY_sp(Double y_sp) {
-        this.y_sp = y_sp;
+    public void setY(Double y) {
+        this.y = y;
     }
 
-    public String getTree_id() {
-        return tree_id;
+    public String getTreeId() {
+        return treeId;
     }
 
-    public void setTree_id(String tree_id) {
-        this.tree_id = tree_id;
+    public void setTreeId(String treeId) {
+        this.treeId = treeId;
     }
 }

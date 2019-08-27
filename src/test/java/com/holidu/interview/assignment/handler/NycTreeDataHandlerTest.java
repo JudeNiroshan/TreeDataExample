@@ -68,10 +68,10 @@ public class NycTreeDataHandlerTest {
         // assertions
         assertThat(allTrees).hasSize(1);
         for (Tree t: allTrees) {
-            assertThat(t.getTree_id()).isEqualTo("180683");
-            assertThat(t.getSpc_common()).isEqualTo("red maple");
-            assertThat(t.getX_sp()).isEqualTo(1027431.148);
-            assertThat(t.getY_sp()).isEqualTo(202756.7687);
+            assertThat(t.getTreeId()).isEqualTo("180683");
+            assertThat(t.getTreeName()).isEqualTo("red maple");
+            assertThat(t.getX()).isEqualTo(1027431.148);
+            assertThat(t.getY()).isEqualTo(202756.7687);
 
         }
     }
